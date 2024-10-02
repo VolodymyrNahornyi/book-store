@@ -8,6 +8,8 @@ import { TopMenuComponent } from './header/top-menu/top-menu.component';
 import { AuthMenuComponent } from './header/auth-menu/auth-menu.component';
 import { BookListComponent } from './book-list/book-list.component';
 import {NgOptimizedImage} from "@angular/common";
+import { SearchComponent } from './book-list/search/search.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import {NgOptimizedImage} from "@angular/common";
     HeaderComponent,
     TopMenuComponent,
     AuthMenuComponent,
-    BookListComponent
+    BookListComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

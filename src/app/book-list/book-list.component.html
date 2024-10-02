@@ -1,17 +1,23 @@
-<img src="{{book.bImage}}" class="img-thumbnail" alt="hp">
-<p>Name: {{ book.name }}</p>
-<p>Author: {{ book.author }}</p>
-<p>Price: {{ '$' + book.price }}</p>
-<p>Discount Price: {{ '$' + getDiscountedPrice().toFixed(2) }}</p>
-<p>Year: {{ book.year }}</p>
-<p>Publisher: {{ book.publisher }}</p>
-<p>Available: {{ book.isAvailable ? 'Yes' : 'No' }}</p>
-<p>In Stock: {{ book.numberInStock > 0 ? book.numberInStock + ' items left' : 'Not in Stock' }}</p>
+<!--<img src="{{book.bImage}}" class="img-thumbnail" alt="hp">-->
+<!--<p>Name: {{ book.name }}</p>-->
+<!--<p>Author: {{ book.author }}</p>-->
+<!--<p>Price: {{ '$' + book.price }}</p>-->
+<!--<p>Discount Price: {{ '$' + getDiscountedPrice().toFixed(2) }}</p>-->
+<!--<p>Year: {{ book.year }}</p>-->
+<!--<p>Publisher: {{ book.publisher }}</p>-->
+<!--<p>Available: {{ book.isAvailable ? 'Yes' : 'No' }}</p>-->
+<!--<p>In Stock: {{ book.numberInStock > 0 ? book.numberInStock + ' items left' : 'Not in Stock' }}</p>-->
 
-<div class="d-flex align-items-center justify-content-start">
-  <button class="btn btn-outline-danger me-2" (click)="decrement()">-</button>
-  <!-- Display current count -->
-  <span class="mx-2">{{ numberInCart }}</span>
-  <!-- Button for increment -->
-  <button class="btn btn-outline-success" (click)="increment()">+</button>
-</div>
+<!--<div class="d-flex align-items-center justify-content-start">-->
+<!--  <button class="btn btn-outline-danger me-2" (click)="decrement()">-</button>-->
+<!--  &lt;!&ndash; Display current count &ndash;&gt;-->
+<!--  <span class="mx-2">{{ numberInCart }}</span>-->
+<!--  &lt;!&ndash; Button for increment &ndash;&gt;-->
+<!--  <button class="btn btn-outline-success" (click)="increment()">+</button>-->
+<!--</div>-->
+
+<app-search></app-search>
+
+
+
+
