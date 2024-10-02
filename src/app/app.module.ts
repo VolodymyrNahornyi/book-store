@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { TopMenuComponent } from './header/top-menu/top-menu.component';
 import { AuthMenuComponent } from './header/auth-menu/auth-menu.component';
-import { BookListComponent } from './book-list/book-list.component';
+import { ContainerComponent } from './container/container.component';
 import {NgOptimizedImage} from "@angular/common";
-import { SearchComponent } from './book-list/search/search.component';
+import { SearchComponent } from './container/search/search.component';
 import {FormsModule} from "@angular/forms";
+import { BookListComponent } from './container/book-list/book-list.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import {FormsModule} from "@angular/forms";
     HeaderComponent,
     TopMenuComponent,
     AuthMenuComponent,
-    BookListComponent,
-    SearchComponent
+    ContainerComponent,
+    SearchComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule,
