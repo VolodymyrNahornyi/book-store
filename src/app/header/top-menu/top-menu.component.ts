@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'top-menu',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './top-menu.component.css'
 })
 export class TopMenuComponent {
-
+  topMenuItems: string[] = ['Home', 'Books', 'About', 'Contacts'];
 }
