@@ -18,6 +18,14 @@
             <strong>Summary:</strong> {{book.summary | slice:0:100}}...
           </p>
           <p class="card-text">
+            <strong>Price:</strong>
+            <span [ngClass]="{'text-decoration-line-through text-danger': book.discountPrice}"> {{book.price | currency}}</span>
+            <strong class="text-success">{{book.discountPrice | currency}}</strong>
+          </p>
+          <p *ngIf="book.discountPrice" class="badge bg-success">
+            {{ getDiscountPercentage(book.price, book.discountPrice) }}% Off
+          </p>
+          <p class="card-text">
             <strong>Rating:</strong> {{book.rating}}/5
           </p>
           <p class="card-text">

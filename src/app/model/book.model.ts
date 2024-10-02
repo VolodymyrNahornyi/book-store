@@ -13,7 +13,9 @@ export class Book {
     public coverImage: string,
     public rating: number,
     public publishedDate: Date,
-    public keywords: string[]
+    public keywords: string[],
+    public price: number,
+    public discountPrice?: number
   ) {
   }
 

@@ -22,7 +22,9 @@ export class BookListComponent {
       coverImage: "https://m.media-amazon.com/images/I/71nNFtlHxHL._SL1500_.jpg",
       rating: 4.5,
       publishedDate: new Date("1925-04-10"),
-      keywords: ["classic", "American literature", "Jazz Age", "tragedy"]
+      keywords: ["classic", "American literature", "Jazz Age", "tragedy"],
+      price: 20.99,
+      discountPrice: 14.99
     },
     {
       id: 2,
@@ -38,7 +40,8 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAF2FK6OWRM/2/0/752w/canva-brown-and-blue-wizard-fantasy-novel-book-cover-BylerPQ7Ne8.png",
       rating: 4.8,
       publishedDate: new Date("1960-07-11"),
-      keywords: ["classic", "American literature", "civil rights", "coming-of-age"]
+      keywords: ["classic", "American literature", "civil rights", "coming-of-age"],
+      price: 18.59
     },
     {
       id: 3,
@@ -54,7 +57,8 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAFZc43RODQ/1/0/1003w/canva-aesthetic-minimalist-photo-collage-love-story-book-cover-hTYG_lxFolQ.jpg",
       rating: 4.7,
       publishedDate: new Date("1949-06-08"),
-      keywords: ["dystopia", "political fiction", "totalitarianism"]
+      keywords: ["dystopia", "political fiction", "totalitarianism"],
+      price: 32.99
     },
     {
       id: 4,
@@ -70,7 +74,9 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAFfSnGl7II/2/0/1003w/canva-elegant-dark-woods-fantasy-photo-book-cover-vAt8PH1CmqQ.jpg",
       rating: 4.0,
       publishedDate: new Date("1951-07-16"),
-      keywords: ["coming-of-age", "classic", "American literature"]
+      keywords: ["coming-of-age", "classic", "American literature"],
+      price: 12.99,
+      discountPrice: 7.99
     },
     {
       id: 5,
@@ -86,7 +92,9 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAFZfrpK8D4/1/0/1003w/canva-dark-minimalist-vintage-portrait-photo-ripped-paper-book-cover-TDLQ377Qb9o.jpg",
       rating: 4.8,
       publishedDate: new Date("1937-09-21"),
-      keywords: ["fantasy", "adventure", "classic"]
+      keywords: ["fantasy", "adventure", "classic"],
+      price: 16.99,
+      discountPrice: 7.99
     },
     {
       id: 6,
@@ -102,7 +110,8 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAFKA0RgDtw/1/0/1003w/canva-brown-and-orange-elegant-simple-young-adult-fantasy-book-cover-Qb8uSVdJDzw.jpg",
       rating: 4.6,
       publishedDate: new Date("1813-01-28"),
-      keywords: ["romance", "classic", "social commentary"]
+      keywords: ["romance", "classic", "social commentary"],
+      price: 68.99
     },
     {
       id: 7,
@@ -118,7 +127,9 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAF9qT1w74Y/1/0/752w/canva-blue-and-yellow-corporate-business-book-cover-LM6WSHZwXco.png",
       rating: 4.3,
       publishedDate: new Date("1890-07-01"),
-      keywords: ["classic", "philosophical fiction", "Gothic"]
+      keywords: ["classic", "philosophical fiction", "Gothic"],
+      price: 44.99,
+      discountPrice: 9.99
     },
     {
       id: 8,
@@ -134,7 +145,8 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAFaEkYFwCo/1/0/1003w/canva-black-and-grey-dark-forest-aesthetic-book-cover-l5DUkKB05Tc.jpg",
       rating: 4.0,
       publishedDate: new Date("1851-10-18"),
-      keywords: ["adventure", "classic", "whaling"]
+      keywords: ["adventure", "classic", "whaling"],
+      price: 52.99
     },
     {
       id: 9,
@@ -150,7 +162,8 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAFQ08wTzpY/1/0/1003w/canva-blue-white-simple-mountain-and-cloud-landscape-photo-book-cover-0xEou6iLWRU.jpg",
       rating: 4.6,
       publishedDate: new Date("1932-08-31"),
-      keywords: ["dystopia", "science fiction", "philosophy"]
+      keywords: ["dystopia", "science fiction", "philosophy"],
+      price: 17.99
     },
     {
       id: 10,
@@ -166,7 +179,9 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAFpS1ceGQQ/1/0/1003w/canva-colorful-modern-cookbook-book-cover-YTEX1G_wu18.jpg",
       rating: 4.4,
       publishedDate: new Date("1988-04-15"),
-      keywords: ["self-discovery", "philosophy", "inspiration"]
+      keywords: ["self-discovery", "philosophy", "inspiration"],
+      price: 12.99,
+      discountPrice: 3.99
     },
     {
       id: 11,
@@ -182,7 +197,9 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAFxw_2FxsA/1/0/752w/canva-black-illustrated-gothic-medieval-kingdom-story-book-cover-1UYAoTpoa70.png",
       rating: 4.2,
       publishedDate: new Date("2003-03-18"),
-      keywords: ["mystery", "thriller", "historical fiction"]
+      keywords: ["mystery", "thriller", "historical fiction"],
+      price: 34.99,
+      discountPrice: 7.99
     },
     {
       id: 12,
@@ -198,7 +215,8 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAFd8-1gR9k/1/0/1003w/canva-pink-watercolor-leaves-notebook-book-cover-t7kmGvX8ks8.jpg",
       rating: 4.3,
       publishedDate: new Date("1961-11-10"),
-      keywords: ["satire", "war", "classic"]
+      keywords: ["satire", "war", "classic"],
+      price: 14.99
     },
     {
       id: 13,
@@ -214,7 +232,8 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAF2CwryWEU/1/0/752w/canva-blue-and-green-cartoon-illustrative-love-story-book-cover-6PvSHMbI608.png",
       rating: 4.4,
       publishedDate: new Date("1869-01-01"),
-      keywords: ["historical fiction", "classic", "war"]
+      keywords: ["historical fiction", "classic", "war"],
+      price: 78.99,
     },
     {
       id: 14,
@@ -230,7 +249,9 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAFXKFIDad4/1/0/1003w/canva-brown-mystery-novel-book-cover-cSu1pdo96zA.jpg",
       rating: 4.6,
       publishedDate: new Date("2006-09-26"),
-      keywords: ["post-apocalyptic", "survival", "literary fiction"]
+      keywords: ["post-apocalyptic", "survival", "literary fiction"],
+      price: 88.99,
+      discountPrice: 24.99
     },
     {
       id: 15,
@@ -246,7 +267,9 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAFlHhpAMfU/1/0/1003w/canva-purple-and-red-modern-illustrative-kids-book-cover-UFY7x2CvVhg.jpg",
       rating: 4.4,
       publishedDate: new Date("1985-04-17"),
-      keywords: ["dystopia", "feminism", "classic"]
+      keywords: ["dystopia", "feminism", "classic"],
+      price: 18.99,
+      discountPrice: 10.99
     },
     {
       id: 16,
@@ -262,7 +285,8 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAGKkPbakT4/1/0/752w/canva-purple-sky-book-cover-3GWYYWw7vAM.png",
       rating: 4.7,
       publishedDate: new Date("2003-05-29"),
-      keywords: ["friendship", "redemption", "historical fiction"]
+      keywords: ["friendship", "redemption", "historical fiction"],
+      price: 16.99
     },
     {
       id: 17,
@@ -278,7 +302,8 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAFtkYzzrKE/1/0/1003w/canva-blue-and-green-illustrative-animal-story-book-cover-XK25AoC7Qu8.jpg",
       rating: 4.5,
       publishedDate: new Date("2008-09-14"),
-      keywords: ["dystopia", "young adult", "action"]
+      keywords: ["dystopia", "young adult", "action"],
+      price: 66.99
     },
     {
       id: 18,
@@ -294,7 +319,9 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAGE-qyRobM/2/0/752w/canva-pink-floral-watercolor-prayer-journal-book-cover-undtHwMekts.png",
       rating: 4.2,
       publishedDate: new Date("2012-01-10"),
-      keywords: ["young adult", "romance", "cancer"]
+      keywords: ["young adult", "romance", "cancer"],
+      price: 12.99,
+      discountPrice: 7.99
     },
     {
       id: 19,
@@ -310,7 +337,8 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAFY729lDrY/1/0/1003w/canva-brown-mystery-novel-book-cover-4DDntvlI-Fc.jpg",
       rating: 4.1,
       publishedDate: new Date("2012-06-05"),
-      keywords: ["thriller", "mystery", "psychological"]
+      keywords: ["thriller", "mystery", "psychological"],
+      price: 16.99
     },
     {
       id: 20,
@@ -326,7 +354,15 @@ export class BookListComponent {
       coverImage: "https://marketplace.canva.com/EAFoP0vf7uo/1/0/1003w/canva-purple-watercolor-notebook-book-cover-odV0fzpIc3s.jpg",
       rating: 4.3,
       publishedDate: new Date("2019-02-05"),
-      keywords: ["thriller", "mystery", "psychological"]
+      keywords: ["thriller", "mystery", "psychological"],
+      price: 111.99
     }
   ];
+
+  getDiscountPercentage(price: number, discountPrice: number | undefined) {
+    if (discountPrice)
+      return Math.round(100 - (discountPrice / price) * 100);
+
+    return price;
+  }
 }
