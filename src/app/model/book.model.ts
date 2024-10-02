@@ -15,6 +15,7 @@ export class Book {
     public publishedDate: Date,
     public keywords: string[],
     public price: number,
+    public isAvailable: boolean,
     public discountPrice?: number
   ) {
   }

@@ -24,7 +24,8 @@ export class BookListComponent {
       publishedDate: new Date("1925-04-10"),
       keywords: ["classic", "American literature", "Jazz Age", "tragedy"],
       price: 20.99,
-      discountPrice: 14.99
+      discountPrice: 14.99,
+      isAvailable: true
     },
     {
       id: 2,
@@ -41,7 +42,8 @@ export class BookListComponent {
       rating: 4.8,
       publishedDate: new Date("1960-07-11"),
       keywords: ["classic", "American literature", "civil rights", "coming-of-age"],
-      price: 18.59
+      price: 18.59,
+      isAvailable: true
     },
     {
       id: 3,
@@ -58,7 +60,8 @@ export class BookListComponent {
       rating: 4.7,
       publishedDate: new Date("1949-06-08"),
       keywords: ["dystopia", "political fiction", "totalitarianism"],
-      price: 32.99
+      price: 32.99,
+      isAvailable: false
     },
     {
       id: 4,
@@ -76,7 +79,8 @@ export class BookListComponent {
       publishedDate: new Date("1951-07-16"),
       keywords: ["coming-of-age", "classic", "American literature"],
       price: 12.99,
-      discountPrice: 7.99
+      discountPrice: 7.99,
+      isAvailable: false
     },
     {
       id: 5,
@@ -94,7 +98,8 @@ export class BookListComponent {
       publishedDate: new Date("1937-09-21"),
       keywords: ["fantasy", "adventure", "classic"],
       price: 16.99,
-      discountPrice: 7.99
+      discountPrice: 7.99,
+      isAvailable: true
     },
     {
       id: 6,
@@ -111,7 +116,8 @@ export class BookListComponent {
       rating: 4.6,
       publishedDate: new Date("1813-01-28"),
       keywords: ["romance", "classic", "social commentary"],
-      price: 68.99
+      price: 68.99,
+      isAvailable: true
     },
     {
       id: 7,
@@ -129,7 +135,8 @@ export class BookListComponent {
       publishedDate: new Date("1890-07-01"),
       keywords: ["classic", "philosophical fiction", "Gothic"],
       price: 44.99,
-      discountPrice: 9.99
+      discountPrice: 9.99,
+      isAvailable: true
     },
     {
       id: 8,
@@ -146,7 +153,8 @@ export class BookListComponent {
       rating: 4.0,
       publishedDate: new Date("1851-10-18"),
       keywords: ["adventure", "classic", "whaling"],
-      price: 52.99
+      price: 52.99,
+      isAvailable: false
     },
     {
       id: 9,
@@ -163,7 +171,8 @@ export class BookListComponent {
       rating: 4.6,
       publishedDate: new Date("1932-08-31"),
       keywords: ["dystopia", "science fiction", "philosophy"],
-      price: 17.99
+      price: 17.99,
+      isAvailable: false
     },
     {
       id: 10,
@@ -181,7 +190,8 @@ export class BookListComponent {
       publishedDate: new Date("1988-04-15"),
       keywords: ["self-discovery", "philosophy", "inspiration"],
       price: 12.99,
-      discountPrice: 3.99
+      discountPrice: 3.99,
+      isAvailable: true
     },
     {
       id: 11,
@@ -199,7 +209,8 @@ export class BookListComponent {
       publishedDate: new Date("2003-03-18"),
       keywords: ["mystery", "thriller", "historical fiction"],
       price: 34.99,
-      discountPrice: 7.99
+      discountPrice: 7.99,
+      isAvailable: true
     },
     {
       id: 12,
@@ -216,7 +227,8 @@ export class BookListComponent {
       rating: 4.3,
       publishedDate: new Date("1961-11-10"),
       keywords: ["satire", "war", "classic"],
-      price: 14.99
+      price: 14.99,
+      isAvailable: true
     },
     {
       id: 13,
@@ -234,6 +246,7 @@ export class BookListComponent {
       publishedDate: new Date("1869-01-01"),
       keywords: ["historical fiction", "classic", "war"],
       price: 78.99,
+      isAvailable: false
     },
     {
       id: 14,
@@ -251,7 +264,8 @@ export class BookListComponent {
       publishedDate: new Date("2006-09-26"),
       keywords: ["post-apocalyptic", "survival", "literary fiction"],
       price: 88.99,
-      discountPrice: 24.99
+      discountPrice: 24.99,
+      isAvailable: false
     },
     {
       id: 15,
@@ -269,7 +283,8 @@ export class BookListComponent {
       publishedDate: new Date("1985-04-17"),
       keywords: ["dystopia", "feminism", "classic"],
       price: 18.99,
-      discountPrice: 10.99
+      discountPrice: 10.99,
+      isAvailable: true
     },
     {
       id: 16,
@@ -286,7 +301,8 @@ export class BookListComponent {
       rating: 4.7,
       publishedDate: new Date("2003-05-29"),
       keywords: ["friendship", "redemption", "historical fiction"],
-      price: 16.99
+      price: 16.99,
+      isAvailable: false
     },
     {
       id: 17,
@@ -303,7 +319,8 @@ export class BookListComponent {
       rating: 4.5,
       publishedDate: new Date("2008-09-14"),
       keywords: ["dystopia", "young adult", "action"],
-      price: 66.99
+      price: 66.99,
+      isAvailable: true
     },
     {
       id: 18,
@@ -321,7 +338,8 @@ export class BookListComponent {
       publishedDate: new Date("2012-01-10"),
       keywords: ["young adult", "romance", "cancer"],
       price: 12.99,
-      discountPrice: 7.99
+      discountPrice: 7.99,
+      isAvailable: true
     },
     {
       id: 19,
@@ -338,7 +356,8 @@ export class BookListComponent {
       rating: 4.1,
       publishedDate: new Date("2012-06-05"),
       keywords: ["thriller", "mystery", "psychological"],
-      price: 16.99
+      price: 16.99,
+      isAvailable: false
     },
     {
       id: 20,
@@ -355,7 +374,8 @@ export class BookListComponent {
       rating: 4.3,
       publishedDate: new Date("2019-02-05"),
       keywords: ["thriller", "mystery", "psychological"],
-      price: 111.99
+      price: 111.99,
+      isAvailable: true
     }
   ];
 
