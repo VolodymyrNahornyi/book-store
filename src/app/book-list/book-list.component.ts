@@ -6,6 +6,10 @@ import {Component} from '@angular/core';
   styleUrl: './book-list.component.css'
 })
 export class BookListComponent {
+
+  // name: string | null = '';
+  numberInCart: number = 0;
+
   book = {
     name: 'Harry Potter and the Chamber of Secrets',
     author: 'Joan Rowling',
@@ -21,5 +25,21 @@ export class BookListComponent {
   getDiscountedPrice() {
     return this.book.price - this.book.price * this.book.discount / 100;
   }
+
+  increment(){
+    if(this.book.numberInStock > this.numberInCart) {
+      this.numberInCart++;
+    }
+  }
+
+  decrement(){
+    if(this.numberInCart > 0) {
+      this.numberInCart--;
+    }
+  }
+  // onTextChanged(event: any){
+  //   console.log(event.target.value)
+  //   this.name = event.target.value;
+  // }
 
 }
