@@ -11,6 +11,7 @@ import {NgOptimizedImage} from "@angular/common";
 import { SearchComponent } from './container/search/search.component';
 import {FormsModule} from "@angular/forms";
 import { BookListComponent } from './container/book-list/book-list.component';
+import { BookComponent } from './container/book-list/book/book.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BookListComponent } from './container/book-list/book-list.component';
     AuthMenuComponent,
     ContainerComponent,
     SearchComponent,
-    BookListComponent
+    BookListComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,
