@@ -1,4 +1,4 @@
-
+<div class="card mb-3">
   <img [src]="book.coverImage" class="card-img-top" alt="{{book.title}} Cover">
   <div class="card-body">
     <h5 class="card-title">{{ book.title }}</h5>
@@ -17,7 +17,7 @@
     <p class="card-text">
       <strong>Price:</strong>
       <span
-        [ngClass]="{'text-decoration-line-through text-danger': book.discountPrice}"> {{ book.price | currency }}</span>
+        [ngClass]="{'text-decoration-line-through text-danger': book.discountPrice}">{{ book.price | currency }}</span>
       <strong class="text-success">{{ book.discountPrice | currency }}</strong>
     </p>
     <p *ngIf="book.discountPrice" class="badge bg-success">
@@ -30,10 +30,10 @@
       <small class="text-muted">Published on: {{ book.publishedDate | date:'longDate' }}</small>
     </p>
     <p class="card-text">
-      <small [ngStyle]="{fontWeight: 'bold', color: book.isAvailable ? 'Green' : 'Red'}">
-        {{ book.isAvailable ? 'Is Available' : 'Not In Stock' }}</small>
+      <small [ngStyle]="{fontWeight: 'bold', color: book.isAvailable ? 'green' : 'red'}">
+        {{ book.isAvailable ? 'Is Available' : 'Not In Stock' }}
+      </small>
     </p>
     <a href="#" class="btn btn-primary">More Details</a>
   </div>
-
-
+</div>
