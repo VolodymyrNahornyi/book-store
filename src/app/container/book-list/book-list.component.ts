@@ -386,15 +386,32 @@ export class BookListComponent {
     return price;
   }
 
-  getAllBooksCount(){
+  getAllBooksCount() {
     return this.books.length;
   }
 
-  getBooksAvailableInStockCount(){
-    return this.books.filter(b=> b.isAvailable).length;
+  getBooksAvailableInStockCount() {
+    return this.books.filter(b => b.isAvailable).length;
   }
 
-  getBooksNotInStockCount(){
-    return this.books.filter(b=> !b.isAvailable).length;
+  getBooksNotInStockCount() {
+    return this.books.filter(b => !b.isAvailable).length;
   }
+
+  selectedFilterRadioButton: string = 'all';
+
+  getSelectedFilterRadioButton(value: string) {
+    this.selectedFilterRadioButton = value;
+  }
+
+  get filteredBooks() {
+    if (this.selectedFilterRadioButton === 'available') {
+      return this.books.filter(book => book.isAvailable);
+    } else if (this.selectedFilterRadioButton === 'outOfStock') {
+      return this.books.filter(book => !book.isAvailable);
+    }
+    return this.books;
+  }
+
+
 }

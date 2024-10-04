@@ -9,6 +9,8 @@
           id="showAll"
           name="bookFilter"
           value="all"
+          [(ngModel)]="selectedFilterRadioButton"
+          (change)="onSelectedFilterRadioButtonChanged()"
         />
         <label class="form-check-label" for="showAll">
           {{ 'All (' + all + ')' }}
@@ -22,6 +24,8 @@
           id="showAvailable"
           name="bookFilter"
           value="available"
+          [(ngModel)]="selectedFilterRadioButton"
+          (change)="onSelectedFilterRadioButtonChanged()"
         />
         <label class="form-check-label" for="showAvailable">
           {{ 'Is Available (' + inStock + ')' }}
@@ -35,6 +39,8 @@
           id="showOutOfStock"
           name="bookFilter"
           value="outOfStock"
+          [(ngModel)]="selectedFilterRadioButton"
+          (change)="onSelectedFilterRadioButtonChanged()"
         />
         <label class="form-check-label" for="showOutOfStock">
           {{ 'Not In Stock (' + outOfStock + ')' }}
