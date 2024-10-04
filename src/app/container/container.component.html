@@ -1,9 +1,2 @@
-<app-search></app-search>
-<book-list></book-list>
-<!--<div *ngFor="let item of listOfStrings">-->
-<!--  <p>The current element is: {{ item }}</p>-->
-<!--</div>-->
-
-
-
-
+<app-search (searchTextChanged)="getSearchText($event)"></app-search>
+<book-list [searchText]="searchText"></book-list>
