@@ -385,4 +385,16 @@ export class BookListComponent {
 
     return price;
   }
+
+  getAllBooksCount(){
+    return this.books.length;
+  }
+
+  getBooksAvailableInStockCount(){
+    return this.books.filter(b=> b.isAvailable).length;
+  }
+
+  getBooksNotInStockCount(){
+    return this.books.filter(b=> !b.isAvailable).length;
+  }
 }

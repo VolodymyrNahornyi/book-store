@@ -12,6 +12,7 @@ import { SearchComponent } from './container/search/search.component';
 import {FormsModule} from "@angular/forms";
 import { BookListComponent } from './container/book-list/book-list.component';
 import { BookComponent } from './container/book-list/book/book.component';
+import { FilterComponent } from './container/book-list/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BookComponent } from './container/book-list/book/book.component';
     ContainerComponent,
     SearchComponent,
     BookListComponent,
-    BookComponent
+    BookComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
