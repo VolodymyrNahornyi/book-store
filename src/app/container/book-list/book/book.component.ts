@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {Book} from "../../../model/book.model";
 
 @Component({
   selector: 'app-book',
@@ -7,25 +8,13 @@ import {Component, Input} from '@angular/core';
 })
 export class BookComponent {
   @Input()
-  book: {
-    id: number;
-    title: string;
-    author: string;
-    publicationYear: number;
-    genre: string;
-    isbn: string;
-    publisher: string;
-    pageCount: number;
-    language: string;
-    summary: string;
-    coverImage: string;
-    rating: number;
-    publishedDate: Date;
-    keywords: string[];
-    price: number;
-    isAvailable: boolean;
-    discountPrice?: number;
-  };
+  book: Book;
 
   @Input() getDiscountPercentage: (price: number, discountPrice: number | undefined) => number;
+
+  openBookDetailModal() {
+    const modalElement = document.getElementById('bookDetailModal');
+    const modalInstance = new (window as any).bootstrap.Modal(modalElement);
+    modalInstance.show();
+  }
 }

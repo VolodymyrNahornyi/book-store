@@ -19,5 +19,4 @@ export class Book {
     public discountPrice?: number
   ) {
   }
-
 }

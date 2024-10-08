@@ -382,6 +382,8 @@ export class BookListComponent {
   @Input()
   searchText: string = '';
 
+  selectedBook: Book;
+
   getDiscountPercentage(price: number, discountPrice: number | undefined) {
     if (discountPrice)
       return Math.round(100 - (discountPrice / price) * 100);
@@ -423,4 +425,6 @@ export class BookListComponent {
         return book.title.toLowerCase().includes(this.searchText.toLowerCase());
       });
   }
+
+
 }
