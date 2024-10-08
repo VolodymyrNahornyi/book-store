@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Book} from "../../model/book.model";
 
 @Component({
@@ -382,7 +382,14 @@ export class BookListComponent {
   @Input()
   searchText: string = '';
 
+  @Output()
+  selectedBookEvent: EventEmitter<Book> = new EventEmitter<Book>();
+
   selectedBook: Book;
+  onSelectedBook(book: Book) {
+    this.selectedBook = book;
+    this.selectedBookEvent.emit(this.selectedBook);
+  }
 
   getDiscountPercentage(price: number, discountPrice: number | undefined) {
     if (discountPrice)
@@ -425,6 +432,4 @@ export class BookListComponent {
         return book.title.toLowerCase().includes(this.searchText.toLowerCase());
       });
   }
-
-
 }

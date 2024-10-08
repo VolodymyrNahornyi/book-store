@@ -1,3 +1,3 @@
 <app-search (searchTextChanged)="getSearchText($event)"></app-search>
-<book-list [searchText]="searchText"></book-list>
-<book-detail></book-detail>
+<book-list [searchText]="searchText" (selectedBookEvent)="getSelectedBook($event)"></book-list>
+<book-detail [book]="selectedBook"></book-detail>

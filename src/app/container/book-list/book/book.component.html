@@ -4,27 +4,27 @@
     <h5 class="card-title">{{ book.title }}</h5>
     <h6 class="card-subtitle mb-2 text-muted">{{ book.author }}</h6>
     <p class="card-text">
-      <strong>Genre:</strong> {{ book.genre }}<br>
-      <strong>Publication Year:</strong> {{ book.publicationYear }}<br>
-      <strong>ISBN:</strong> {{ book.isbn }}<br>
-      <strong>Publisher:</strong> {{ book.publisher }}<br>
-      <strong>Pages:</strong> {{ book.pageCount }}<br>
-      <strong>Language:</strong> {{ book.language }}<br>
+      <strong>Genre: </strong> {{ book.genre }}<br>
+      <strong>Publication Year: </strong> {{ book.publicationYear }}<br>
+      <strong>ISBN: </strong> {{ book.isbn }}<br>
+      <strong>Publisher: </strong> {{ book.publisher }}<br>
+      <strong>Pages: </strong> {{ book.pageCount }}<br>
+      <strong>Language: </strong> {{ book.language }}<br>
     </p>
     <p class="card-text">
-      <strong>Summary:</strong> {{ book.summary | slice:0:100 }}...
+      <strong>Summary: </strong> {{ book.summary | slice:0:100 }}...
     </p>
     <p class="card-text">
-      <strong>Price:</strong>
+      <strong>Price: </strong>
       <span
-        [ngClass]="{'text-decoration-line-through text-danger': book.discountPrice}">{{ book.price | currency }}</span>
-      <strong class="text-success">{{ book.discountPrice | currency }}</strong>
+        [ngClass]="{'text-decoration-line-through text-danger': book.discountPrice}"> {{ book.price | currency }}</span>
+      <strong class="text-success"> {{ book.discountPrice | currency }}</strong>
     </p>
     <p *ngIf="book.discountPrice" class="badge bg-success">
       {{ getDiscountPercentage(book.price, book.discountPrice) }}% Off
     </p>
     <p class="card-text">
-      <strong>Rating:</strong> {{ book.rating }}/5
+      <strong>Rating: </strong> {{ book.rating }}/5
     </p>
     <p class="card-text">
       <small class="text-muted">Published on: {{ book.publishedDate | date:'longDate' }}</small>
@@ -34,6 +34,5 @@
         {{ book.isAvailable ? 'Is Available' : 'Not In Stock' }}
       </small>
     </p>
-    <a href="#" class="btn btn-primary" (click)="openBookDetailModal()">More Details</a>
   </div>
 </div>
