@@ -14,6 +14,8 @@ import { BookListComponent } from './container/book-list/book-list.component';
 import { BookComponent } from './container/book-list/book/book.component';
 import { FilterComponent } from './container/book-list/filter/filter.component';
 import { BookDetailComponent } from './container/book-detail/book-detail.component';
+import { RecentBookListComponent } from './container/recent-book-list/recent-book-list.component';
+import { RecentBookComponent } from './container/recent-book-list/recent-book/recent-book.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { BookDetailComponent } from './container/book-detail/book-detail.compone
     BookListComponent,
     BookComponent,
     FilterComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    RecentBookListComponent,
+    RecentBookComponent
   ],
   imports: [
     BrowserModule,

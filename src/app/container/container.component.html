@@ -1,3 +1,4 @@
 <app-search (searchTextChanged)="getSearchText($event)"></app-search>
 <book-list [searchText]="searchText" (selectedBookEvent)="getSelectedBook($event)"></book-list>
+<recent-book-list (selectedBookEvent)="getSelectedBook($event)"></recent-book-list>
 <book-detail [book]="selectedBook"></book-detail>
