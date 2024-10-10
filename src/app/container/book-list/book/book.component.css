@@ -1,0 +1,15 @@
+.scale-on-hover {
+  transition: transform 0.3s ease; /* Анімація для плавного ефекту */
+}
+
+.scale-on-hover:hover {
+  transform: scale(1.05); /* Збільшення елемента на 10% */
+}
+.highlight-book{
+  -webkit-box-shadow: 0 0 1px 3px #000 inset;
+  -moz-box-shadow: 0 0 1px 3px #000 inset;
+  border: #efefef 2px solid;
+  box-shadow: 10px 10px 18px #cccccc;
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}

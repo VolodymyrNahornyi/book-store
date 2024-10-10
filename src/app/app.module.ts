@@ -17,6 +17,7 @@ import { BookDetailComponent } from './container/book-detail/book-detail.compone
 import { RecentBookListComponent } from './container/recent-book-list/recent-book-list.component';
 import { RecentBookComponent } from './container/recent-book-list/recent-book/recent-book.component';
 import {SetBackground} from "./custom-directives/set-background.directive";
+import { HighlightDirective } from './custom-directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {SetBackground} from "./custom-directives/set-background.directive";
     BookDetailComponent,
     RecentBookListComponent,
     RecentBookComponent,
-    SetBackground
+    SetBackground,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
