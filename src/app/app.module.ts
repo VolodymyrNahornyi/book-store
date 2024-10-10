@@ -16,6 +16,7 @@ import { FilterComponent } from './container/book-list/filter/filter.component';
 import { BookDetailComponent } from './container/book-detail/book-detail.component';
 import { RecentBookListComponent } from './container/recent-book-list/recent-book-list.component';
 import { RecentBookComponent } from './container/recent-book-list/recent-book/recent-book.component';
+import {SetBackground} from "./custom-directives/set-background.directive";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { RecentBookComponent } from './container/recent-book-list/recent-book/re
     FilterComponent,
     BookDetailComponent,
     RecentBookListComponent,
-    RecentBookComponent
+    RecentBookComponent,
+    SetBackground
   ],
   imports: [
     BrowserModule,
