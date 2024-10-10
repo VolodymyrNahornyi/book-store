@@ -18,6 +18,7 @@ import { RecentBookListComponent } from './container/recent-book-list/recent-boo
 import { RecentBookComponent } from './container/recent-book-list/recent-book/recent-book.component';
 import {SetBackground} from "./custom-directives/set-background.directive";
 import { HighlightDirective } from './custom-directives/highlight.directive';
+import {BookService} from "./services/book.service";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { HighlightDirective } from './custom-directives/highlight.directive';
     NgOptimizedImage,
     FormsModule
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
