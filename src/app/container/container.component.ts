@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {Book} from "../model/book.model";
 
 @Component({
   selector: 'app-container',
@@ -9,13 +8,8 @@ import {Book} from "../model/book.model";
 export class ContainerComponent {
 
   searchText: string = '';
-  selectedBook: Book;
 
   getSearchText(value: string){
     this.searchText = value;
-  }
-
-  getSelectedBook(value: Book) {
-    this.selectedBook = value;
   }
 }

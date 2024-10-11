@@ -1,5 +1,5 @@
 import {Book} from "../model/book.model";
-import {Injectable} from "@angular/core";
+import {EventEmitter, Injectable} from "@angular/core";
 
 @Injectable()
 export class BookService {
@@ -374,6 +374,12 @@ export class BookService {
       isAvailable: true
     }
   ];
+
+  selectedBookEvent: EventEmitter<Book> = new EventEmitter<Book>();
+
+  onSelectedBook(book: Book) {
+    this.selectedBookEvent.emit(book);
+  }
 
   getAllBooks() {
     return this.books;

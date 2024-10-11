@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Book} from "../../model/book.model";
 import {BookService} from "../../services/book.service";
 
@@ -13,17 +13,11 @@ export class RecentBookListComponent implements OnInit {
 
   constructor(private bookService: BookService) { }
 
-  @Output()
-  selectedBookEvent: EventEmitter<Book> = new EventEmitter<Book>();
-
-  selectedBook: Book;
-
   ngOnInit(): void {
      this.recentBooks = this.bookService.getRecentBooks();
   }
 
-  onSelectedBook(book: Book) {
-    this.selectedBook = book;
-    this.selectedBookEvent.emit(this.selectedBook);
+  showRecentBookDetail(book: Book){
+    this.bookService.onSelectedBook(book);
   }
 }

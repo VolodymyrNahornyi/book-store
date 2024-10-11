@@ -1,15 +1,25 @@
-import { Component, Input } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Book} from "../../model/book.model";
+import {BookService} from "../../services/book.service";
 
 @Component({
   selector: 'book-detail',
   templateUrl: './book-detail.component.html',
   styleUrl: './book-detail.component.css'
 })
-export class BookDetailComponent {
+export class BookDetailComponent implements OnInit {
 
-  @Input()
-  book: Book;
+  constructor(private bookService: BookService) {
+  }
+
+  selectedBook: Book;
+
+  ngOnInit(): void {
+    this.bookService.selectedBookEvent.subscribe((book: Book) => {
+      this.selectedBook = book;
+    })
+  }
+
 
   getDiscountPercentage(price: number, discountPrice: number | undefined) {
     if (discountPrice)
