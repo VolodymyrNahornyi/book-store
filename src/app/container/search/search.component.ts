@@ -1,4 +1,5 @@
-import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
+import {Component} from '@angular/core';
+import {BookService} from "../../services/book.service";
 
 @Component({
   selector: 'app-search',
@@ -8,13 +9,10 @@ import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/c
 export class SearchComponent {
   searchText: string = '';
 
-  @Output()
-  searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
-
-  @ViewChild('searchInput') searchInputElement: ElementRef
+  constructor(private bookService: BookService) {
+  }
 
   setSearchText(){
-    this.searchText = this.searchInputElement.nativeElement.value;
-    this.searchTextChanged.emit(this.searchText);
+    this.bookService.setSearchText(this.searchText);
   }
 }

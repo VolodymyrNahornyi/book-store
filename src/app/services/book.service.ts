@@ -1,6 +1,6 @@
 import {Book} from "../model/book.model";
 import {EventEmitter, Injectable} from "@angular/core";
-import {map, Observable, of} from "rxjs";
+import {map, Observable, of, Subject} from "rxjs";
 
 @Injectable()
 export class BookService {
@@ -380,6 +380,13 @@ export class BookService {
 
   onSelectedBook(book: Book) {
     this.selectedBookEvent.emit(book);
+  }
+
+  // searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
+  searchTextChanged: Subject<string> = new Subject<string>();
+
+  setSearchText(value: string){
+    this.searchTextChanged.next(value);
   }
 
   getAllBooks(filterType: string, searchTerm: string = ''): Observable<Book[]> {

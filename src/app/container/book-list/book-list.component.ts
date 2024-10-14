@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Book} from "../../model/book.model";
 import {BookService} from "../../services/book.service";
 
@@ -7,11 +7,9 @@ import {BookService} from "../../services/book.service";
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.css'
 })
-export class BookListComponent implements OnInit, OnChanges {
+export class BookListComponent implements OnInit {
 
   books: Book[] = [];
-
-  @Input()
   searchText: string = '';
 
   selectedFilterRadioButton: string = 'all';
@@ -19,13 +17,11 @@ export class BookListComponent implements OnInit, OnChanges {
   constructor(private bookService: BookService) {
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['searchText'] && !changes['searchText'].firstChange) {
-          this.getBooks();
-    }
-  }
-
   ngOnInit(): void {
+    this.bookService.searchTextChanged.subscribe((value: string) => {
+      this.searchText = value;
+      this.getBooks();
+    });
     this.getBooks();
   }
 
