@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Book} from "../../model/book.model";
 import {BookService} from "../../services/book.service";
 
@@ -7,21 +7,29 @@ import {BookService} from "../../services/book.service";
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.css'
 })
-export class BookListComponent implements OnInit {
+export class BookListComponent implements OnInit, OnChanges {
 
   books: Book[] = [];
-
-  constructor(private bookService: BookService) {
-  }
-
-  ngOnInit(): void {
-    this.books = this.bookService.getAllBooks();
-  }
 
   @Input()
   searchText: string = '';
 
-  showBookDetail(book: Book){
+  selectedFilterRadioButton: string = 'all';
+
+  constructor(private bookService: BookService) {
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['searchText'] && !changes['searchText'].firstChange) {
+          this.getBooks();
+    }
+  }
+
+  ngOnInit(): void {
+    this.getBooks();
+  }
+
+  showBookDetail(book: Book) {
     this.bookService.onSelectedBook(book);
   }
 
@@ -44,26 +52,16 @@ export class BookListComponent implements OnInit {
     return this.books.filter(b => !b.isAvailable).length;
   }
 
-  selectedFilterRadioButton: string = 'all';
-
   getSelectedFilterRadioButton(value: string) {
     this.selectedFilterRadioButton = value;
+    this.getBooks();
   }
 
-  get filteredAndSearchedBooks() {
-    return this.books
-      .filter(book => {
-        // Фільтрація по радіокнопках
-        if (this.selectedFilterRadioButton === 'available') {
-          return book.isAvailable;
-        } else if (this.selectedFilterRadioButton === 'outOfStock') {
-          return !book.isAvailable;
-        }
-        return true; // Повернути всі книги, якщо вибрано "all"
-      })
-      .filter(book => {
-        // Пошук по заголовку
-        return book.title.toLowerCase().includes(this.searchText.toLowerCase());
-      });
+  getBooks() {
+    this.bookService.getAllBooks(this.selectedFilterRadioButton, this.searchText).subscribe({
+      next: (data) => this.books = data,
+      error: (err) => console.log(err),
+      complete: () => console.log('Books loaded successfully.')
+    });
   }
 }

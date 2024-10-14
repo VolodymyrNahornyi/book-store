@@ -1,5 +1,6 @@
 import {Book} from "../model/book.model";
 import {EventEmitter, Injectable} from "@angular/core";
+import {map, Observable, of} from "rxjs";
 
 @Injectable()
 export class BookService {
@@ -381,12 +382,33 @@ export class BookService {
     this.selectedBookEvent.emit(book);
   }
 
-  getAllBooks() {
-    return this.books;
+  getAllBooks(filterType: string, searchTerm: string = ''): Observable<Book[]> {
+    return of(this.books).pipe(
+      map(books => this.applyAvailabilityFilter(books, filterType)),
+      map(books => this.applySearchTermFilter(books, searchTerm))
+    );
   }
 
-  getRecentBooks() {
-    return this.books.sort((a, b) => b.publishedDate.getTime() - a.publishedDate.getTime())
-      .slice(0, 4);
+  getRecentBooks(): Observable<Book[]> {
+    return of(this.books.sort((a, b) => b.publishedDate.getTime() - a.publishedDate.getTime())
+      .slice(0, 4));
+  }
+
+  private applyAvailabilityFilter(books: Book[], filterType: string) {
+    if (filterType === 'available') {
+      return books.filter(book => book.isAvailable);
+    } else if (filterType === 'outOfStock') {
+      return books.filter(book => !book.isAvailable);
+    }
+    return books;
+  }
+
+  private applySearchTermFilter(books: Book[], searchTerm: string) {
+    if (searchTerm) {
+      return books.filter(book =>
+        book.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+    return books;
   }
 }
