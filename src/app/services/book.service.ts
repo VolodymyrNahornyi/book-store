@@ -1,6 +1,6 @@
 import {Book} from "../model/book.model";
 import {EventEmitter, Injectable} from "@angular/core";
-import {map, Observable, of, Subject} from "rxjs";
+import {BehaviorSubject, map, Observable, of, combineLatest} from "rxjs";
 
 @Injectable()
 export class BookService {
@@ -376,46 +376,66 @@ export class BookService {
     }
   ];
 
+  private bookSubject: BehaviorSubject<Book[]> = new BehaviorSubject<Book[]>(this.books);
+  public books$: Observable<Book[]> = this.bookSubject.asObservable()
+
+  private filterSubject: BehaviorSubject<string> = new BehaviorSubject<string>('all');
+  public filterSubject$: Observable<string> = this.filterSubject.asObservable()
+
+  private searchSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  public searchSubject$: Observable<string> = this.searchSubject.asObservable()
+
+  setSearchTerm(searchTerm: string){
+    this.searchSubject.next(searchTerm);
+  }
+
+  setFilter(filter: string){
+    this.filterSubject.next(filter);
+  }
+
+  public totalBooks$: Observable<number> = this.getFilteredBooks().pipe(
+    map((books) => books.length)
+  );
+
+  public availableBooks$: Observable<number> = this.getFilteredBooks().pipe(
+    map(books => books.filter(book => book.isAvailable).length)
+  );
+
+  public outOfStockBooks$: Observable<number> = this.getFilteredBooks().pipe(
+    map(books => books.filter(book => !book.isAvailable).length)
+  );
+
   selectedBookEvent: EventEmitter<Book> = new EventEmitter<Book>();
 
   onSelectedBook(book: Book) {
     this.selectedBookEvent.emit(book);
   }
 
-  // searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
-  searchTextChanged: Subject<string> = new Subject<string>();
-
-  setSearchText(value: string){
-    this.searchTextChanged.next(value);
+  getFilteredBooks(): Observable<Book[]> {
+    return combineLatest([this.books$, this.filterSubject$, this.searchSubject$]).pipe(
+      map(([books, filter, searchTerm]) => {
+        const filteredByAvailability = this.applyAvailabilityFilter(books, filter);
+        return this.applySearchTermFilter(filteredByAvailability, searchTerm);
+      })
+    );
   }
 
-  getAllBooks(filterType: string, searchTerm: string = ''): Observable<Book[]> {
-    return of(this.books).pipe(
-      map(books => this.applyAvailabilityFilter(books, filterType)),
-      map(books => this.applySearchTermFilter(books, searchTerm))
+  private applyAvailabilityFilter(books: Book[], filter: string): Book[] {
+    return books.filter(book =>
+      filter === 'all' ||
+      (filter === 'available' && book.isAvailable) ||
+      (filter === 'outOfStock' && !book.isAvailable)
+    );
+  }
+
+  private applySearchTermFilter(books: Book[], searchTerm: string): Book[] {
+    return books.filter(book =>
+      book.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
   }
 
   getRecentBooks(): Observable<Book[]> {
     return of(this.books.sort((a, b) => b.publishedDate.getTime() - a.publishedDate.getTime())
       .slice(0, 4));
-  }
-
-  private applyAvailabilityFilter(books: Book[], filterType: string) {
-    if (filterType === 'available') {
-      return books.filter(book => book.isAvailable);
-    } else if (filterType === 'outOfStock') {
-      return books.filter(book => !book.isAvailable);
-    }
-    return books;
-  }
-
-  private applySearchTermFilter(books: Book[], searchTerm: string) {
-    if (searchTerm) {
-      return books.filter(book =>
-        book.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
-    return books;
   }
 }
