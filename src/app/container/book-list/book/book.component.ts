@@ -10,7 +10,7 @@ export class BookComponent {
   @Input()
   book: Book;
 
-  @Input() getDiscountPercentage: (price: number, discountPrice: number | undefined) => number;
+  @Input() getDiscount: (price: number, discountPrice: number | undefined) => number;
 
   openBookDetailModal() {
     const modalElement = document.getElementById('bookDetailModal');

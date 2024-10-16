@@ -1,6 +1,6 @@
 import {Book} from "../model/book.model";
-import {EventEmitter, Injectable} from "@angular/core";
-import {BehaviorSubject, map, Observable, of, combineLatest} from "rxjs";
+import {Injectable} from "@angular/core";
+import {BehaviorSubject, map, Observable, combineLatest} from "rxjs";
 
 @Injectable()
 export class BookService {
@@ -383,7 +383,14 @@ export class BookService {
   public filterSubject$: Observable<string> = this.filterSubject.asObservable()
 
   private searchSubject: BehaviorSubject<string> = new BehaviorSubject<string>('');
-  public searchSubject$: Observable<string> = this.searchSubject.asObservable()
+  public searchSubject$: Observable<string> = this.searchSubject.asObservable();
+
+  private selectedBookSubject: BehaviorSubject<Book> = new BehaviorSubject<Book>(null);
+  public selectedBookSubject$: Observable<Book> = this.selectedBookSubject.asObservable();
+
+  setSelectedBook(selectedBook: Book){
+    this.selectedBookSubject.next(selectedBook);
+  }
 
   setSearchTerm(searchTerm: string){
     this.searchSubject.next(searchTerm);
@@ -405,11 +412,10 @@ export class BookService {
     map(books => books.filter(book => !book.isAvailable).length)
   );
 
-  selectedBookEvent: EventEmitter<Book> = new EventEmitter<Book>();
-
-  onSelectedBook(book: Book) {
-    this.selectedBookEvent.emit(book);
-  }
+  public recentBooks: Observable<Book[]> = this.books$.pipe(
+    map(books => books.sort((a, b) => b.publishedDate.getTime() - a.publishedDate.getTime())
+      .slice(0, 4))
+  );
 
   getFilteredBooks(): Observable<Book[]> {
     return combineLatest([this.books$, this.filterSubject$, this.searchSubject$]).pipe(
@@ -432,10 +438,5 @@ export class BookService {
     return books.filter(book =>
       book.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
-  }
-
-  getRecentBooks(): Observable<Book[]> {
-    return of(this.books.sort((a, b) => b.publishedDate.getTime() - a.publishedDate.getTime())
-      .slice(0, 4));
   }
 }

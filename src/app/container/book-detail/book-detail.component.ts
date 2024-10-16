@@ -1,30 +1,23 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Book} from "../../model/book.model";
 import {BookService} from "../../services/book.service";
+import {Observable} from "rxjs";
+import {getDiscountPercentage} from "../../utils/discount.utils";
 
 @Component({
   selector: 'book-detail',
   templateUrl: './book-detail.component.html',
   styleUrl: './book-detail.component.css'
 })
-export class BookDetailComponent implements OnInit {
+export class BookDetailComponent {
+
+  selectedBook: Observable<Book>;
 
   constructor(private bookService: BookService) {
+    this.selectedBook = this.bookService.selectedBookSubject$;
   }
 
-  selectedBook: Book;
-
-  ngOnInit(): void {
-    this.bookService.selectedBookEvent.subscribe((book: Book) => {
-      this.selectedBook = book;
-    })
-  }
-
-
-  getDiscountPercentage(price: number, discountPrice: number | undefined) {
-    if (discountPrice)
-      return Math.round(100 - (discountPrice / price) * 100);
-
-    return price;
+  getDiscount(price: number, discountPrice: number | undefined) {
+    return getDiscountPercentage(price, discountPrice);
   }
 }
