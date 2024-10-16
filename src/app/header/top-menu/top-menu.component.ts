@@ -6,5 +6,5 @@ import {Component} from '@angular/core';
   styleUrl: './top-menu.component.css'
 })
 export class TopMenuComponent {
-  topMenuItems: string[] = ['Books', 'About', 'Contacts'];
+
 }

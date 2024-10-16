@@ -26,7 +26,8 @@ import {RouterModule, Routes} from "@angular/router";
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'Books', pathMatch: 'full'},
+  // {path: '', redirectTo: 'Books', pathMatch: 'full'},
+  {path: '', component: ContainerComponent},
   {path: 'Books', component: ContainerComponent},
   {path: 'About', component: AboutComponent},
   {path: 'Contacts', component: ContactsComponent},

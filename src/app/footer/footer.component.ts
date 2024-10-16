@@ -12,5 +12,4 @@ export class FooterComponent {
   constructor() {
     this.currentYear = new Date().getFullYear();
   }
-
 }
