@@ -19,6 +19,17 @@ import { RecentBookComponent } from './container/recent-book-list/recent-book/re
 import {SetBackground} from "./custom-directives/set-background.directive";
 import { HighlightDirective } from './custom-directives/highlight.directive';
 import {BookService} from "./services/book.service";
+import { FooterComponent } from './footer/footer.component';
+import { AboutComponent } from './about/about.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import {RouterModule, Routes} from "@angular/router";
+
+const routes: Routes = [
+  {path: '', redirectTo: 'Books', pathMatch: 'full'},
+  {path: 'Books', component: ContainerComponent},
+  {path: 'About', component: AboutComponent},
+  {path: 'Contacts', component: ContactsComponent}
+];
 
 @NgModule({
   declarations: [
@@ -35,13 +46,17 @@ import {BookService} from "./services/book.service";
     RecentBookListComponent,
     RecentBookComponent,
     SetBackground,
-    HighlightDirective
+    HighlightDirective,
+    FooterComponent,
+    AboutComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgOptimizedImage,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [BookService],
   bootstrap: [AppComponent]
