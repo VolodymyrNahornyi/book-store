@@ -23,12 +23,14 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import {RouterModule, Routes} from "@angular/router";
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'Books', pathMatch: 'full'},
   {path: 'Books', component: ContainerComponent},
   {path: 'About', component: AboutComponent},
-  {path: 'Contacts', component: ContactsComponent}
+  {path: 'Contacts', component: ContactsComponent},
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
@@ -49,7 +51,8 @@ const routes: Routes = [
     HighlightDirective,
     FooterComponent,
     AboutComponent,
-    ContactsComponent
+    ContactsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
