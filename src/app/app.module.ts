@@ -22,18 +22,8 @@ import {BookService} from "./services/book.service";
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import {RouterModule, Routes} from "@angular/router";
 import { NotFoundComponent } from './not-found/not-found.component';
-
-const routes: Routes = [
-  // {path: '', redirectTo: 'Books', pathMatch: 'full'},
-  {path: '', component: ContainerComponent},
-  {path: 'Books', component: ContainerComponent},
-  {path: 'Books/:id', component: BookDetailComponent},
-  {path: 'About', component: AboutComponent},
-  {path: 'Contacts', component: ContactsComponent},
-  {path: '**', component: NotFoundComponent}
-];
+import {RoutingModule} from "./routing.module";
 
 @NgModule({
   declarations: [
@@ -61,7 +51,7 @@ const routes: Routes = [
     AppRoutingModule,
     NgOptimizedImage,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RoutingModule
   ],
   providers: [BookService],
   bootstrap: [AppComponent]
