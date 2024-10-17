@@ -17,10 +17,6 @@ export class BookListComponent {
     this.books$ = this.bookService.getFilteredBooks()
   }
 
-  setSelectedBook(book: Book) {
-    this.bookService.setSelectedBook(book);
-  }
-
   getDiscount(price: number, discountPrice: number | undefined) {
     return getDiscountPercentage(price, discountPrice);
   }
