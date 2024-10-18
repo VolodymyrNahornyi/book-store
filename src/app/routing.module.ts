@@ -6,13 +6,21 @@ import {ContactsComponent} from "./contacts/contacts.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {NgModule} from "@angular/core";
 import {LoginComponent} from "./login/login.component";
+import {CheckoutComponent} from "./checkout/checkout.component";
+import {AuthGuardService} from "./services/authguard.service";
 
 const routes: Routes = [
   {path: '', component: ContainerComponent},
   {path: 'Books', component: ContainerComponent},
-  {path: 'Books/:id', component: BookDetailComponent},
+  {
+    path: 'Books', children: [
+
+      {path: 'Checkout', component: CheckoutComponent, canActivate: [AuthGuardService]},
+      {path: ':id', component: BookDetailComponent}
+    ]
+  },
   {path: 'About', component: AboutComponent},
-  {path: 'Contacts', component: ContactsComponent},
+  {path: 'Contacts', component: ContactsComponent, canDeactivate: [AuthGuardService]},
   {path: 'Login', component: LoginComponent},
   {path: '**', component: NotFoundComponent}
 ];
@@ -24,4 +32,5 @@ const routes: Routes = [
   exports: [RouterModule]
 
 })
-export class RoutingModule { }
+export class RoutingModule {
+}
