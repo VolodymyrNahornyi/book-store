@@ -24,6 +24,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {RoutingModule} from "./routing.module";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {RoutingModule} from "./routing.module";
     FooterComponent,
     AboutComponent,
     ContactsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
